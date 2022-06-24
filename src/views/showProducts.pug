@@ -1,0 +1,26 @@
+extends products.pug
+
+block showProducts
+
+    div( class="btn-group" style="text-align: center; background-color: grey; padding: 10px;" role="group" aria-label="Basic example")
+        a( href="/productsForm") 
+            button( type="button" class="btn btn-primary") Cargar producto
+        a( href="/products") 
+            button( type="button" class="btn btn-primary") Ver productos
+    
+    if products
+        table( class="table")
+            thead
+                tr           
+                    th( scope="col") Nombre
+                    th( scope="col") Precio
+                    th( scope="col") Imagen           
+            tbody
+                each producto in products
+                    tr               
+                        td #{producto.nombre}              
+                        td #{producto.precio}               
+                        td 
+                            img( style="height: 50px; width: 50px;" src="#{producto.url}")
+    else  
+                p No hay productos

@@ -1,0 +1,25 @@
+extends productsForm.pug
+
+block form
+      div( class="btn-group" style="text-align: center; background-color: grey; padding: 10px;" role="group" aria-label="Basic example")
+        a( href="/productsForm") 
+          button( type="button" class="btn btn-primary") Cargar producto
+        a( href="/products") 
+          button( type="button" class="btn btn-primary") Ver productos
+
+      div( class="container")
+        div( class="row")
+            div( class="col")        
+        form( action="/products" method="post")
+              div( class="row")
+                div( class="col" style="margin: 10px; display: flex; justify-content: space-between; align-items: center;")
+                    p Nombre 
+                    input( type="text" name="nombre" id="")              
+                div( class="col" style="margin: 10px; display: flex; justify-content: space-between; align-items: center;")
+                    p Precio 
+                    input( type="number" name="precio" id="")              
+                div(class="col" style="margin: 10px; display: flex; justify-content: space-between; align-items: center;")
+                    p URL 
+                    input( type="text" name="url" id="")
+                div( class="col" style="margin: 10px; display: flex; justify-content: space-between; align-items: center;")
+                    input( type="submit" value="Agregar producto")
